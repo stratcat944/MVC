@@ -1,0 +1,7 @@
+extends layout
+
+block content
+	h1 You are viewing : #{food.name}
+	p So #{food.flavor.toLowerCase()}...
+	
+	img(src="#{food.image}")
