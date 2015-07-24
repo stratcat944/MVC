@@ -23,6 +23,8 @@ addFood('Cake', 'Delicious', 'http://static.guim.co.uk/sys-images/music/Pix/pict
 
 addFood('Turkey', 'Fowl', 'http://pixel.nymag.com/imgs/daily/grub/2015/02/03/03-morrissey-turkey.w750.h560.2x.jpg');
 
+addFood('Toast', 'blasphemous', 'http://blog.blazingangles.net/soapbox/images/muhammed-toast.jpg')
+
 var foodFind = function(slug){
 	return allFoods.filter(function(element){
 		return element.slug === slug
@@ -31,10 +33,12 @@ var foodFind = function(slug){
 
 var foodDelete= function(slug){
 
-	allFoods = allFoods.filter(function(element){
-		return element.slug !== slug
-	})
-
+	for(var  i = 0; i < allFoods.length; i++) {
+		if(allFoods[i].slug === slug) {
+			allFoods.splice(i, 1);
+			return
+		}
+	}
 }
 
 
@@ -45,3 +49,4 @@ module.exports = {
 	foodFind 	: foodFind,
 	foodDelete 	: foodDelete
 }
+

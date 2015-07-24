@@ -1,7 +1,7 @@
 var express = require('express');
 var bodyParser = require('body-parser');
 var indexController = require('./controllers/index.js'); // home route
-var apiController = require('./controller/api.js');
+var apiController = require('./controllers/api.js');
 
 var app = express();
 app.set('view engine', 'jade');
@@ -12,7 +12,6 @@ app.use(bodyParser.urlencoded({extended: false}));
 
 // View routes
 app.get('/', indexController.index);
-
 app.get('/foods/:slug', indexController.foodPage);
 
 // API routes

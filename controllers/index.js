@@ -1,4 +1,4 @@
-var food = require('../models/food.js')
+var food = require('../models/food.js');
 
 var indexController = {
 	index: function(req, res) {

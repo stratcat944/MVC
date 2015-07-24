@@ -3,9 +3,9 @@ extends layout
 block content
 	h1 Welcome to the Food House
 
-	for foodItem in foodieFoods
+	for food in foodieFoods
 		.food-item
-			a(href="/foods/#{foodItem.slug}") 
-				h2 #{foodItem.name}
-			p This food is #{foodItem.flavor}
+			a(href="/foods/#{food.slug}") 
+				h2 #{food.name}
+			p This food is #{food.flavor}
 			a(href="/foods/#{food.slug}/delete") Delete #{food.name}
